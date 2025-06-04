@@ -68,6 +68,18 @@ Use `npm install` to install the package.
 
 ### Fenced Code Block
 
+```powershell
+#get $Current  = second.ps1
+#get $Caller   = first.ps1 
+#get $Original = first.ps1
+
+$wc = new-object System.Net.WebClient
+$wc.Headers.Add("user-agent", "PowerShell Script")
+$wc.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+
+$action = [System.IO.Path]::GetFileNameWithoutExtension($myInvocation.MyCommand.Name)
+```
+
 ```js showLineNumbers
 // Function with default parameters and template literals
 function greet(name = "World", enthusiastic = true) {
